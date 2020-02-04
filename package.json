@@ -1,6 +1,6 @@
 {
     "name": "@jixun/tape",
-    "version": "4.13.1",
+    "version": "4.13.1-patch1",
     "description": "tap-producing test harness for node",
     "author": "Jixun <jixun.moe+npm@gmail.com> (https://jixun.moe/)",
     "contributors": [{
@@ -9,7 +9,9 @@
         "url": "http://substack.net"
     }],
     "main": "index.js",
-    "bin": "./bin/tape",
+    "bin": {
+        "tape": "./bin/tape"
+    },
     "directories": {
         "example": "example",
         "test": "test"
