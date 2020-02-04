@@ -59,7 +59,8 @@ module.exports.stripFullStack = function (output) {
 
     return deduped.join('\n').replace(
         // Handle stack trace variation in Node v0.8
-        /at(:?) Test\.(?:module\.exports|tap\.test\.err\.code)/g,
+        // and the new tap / node run difference
+        /at(:?) Test\.(?:module\.exports|tap\.test\.err\.code|_cb)/g,
         'at$1 Test.<anonymous>'
     );
 };

@@ -1,4 +1,4 @@
-var defined = require('defined');
+var defined = require('./utils/defined');
 var createDefaultStream = require('./lib/default_stream');
 var Test = require('./lib/test');
 var createResult = require('./lib/results');
@@ -9,11 +9,6 @@ var canEmitExit = typeof process !== 'undefined' && process
 ;
 var canExit = typeof process !== 'undefined' && process
     && typeof process.exit === 'function'
-;
-
-var nextTick = typeof setImmediate !== 'undefined'
-    ? setImmediate
-    : process.nextTick
 ;
 
 exports = module.exports = (function () {

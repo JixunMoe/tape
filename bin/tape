@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var resolveModule = require('resolve').sync;
 var resolvePath = require('path').resolve;
 var readFileSync = require('fs').readFileSync;
 var parseOpts = require('minimist');
@@ -24,7 +23,7 @@ opts.require.forEach(function (module) {
         /* This check ensures we ignore `-r ""`, trailing `-r`, or
          * other silly things the user might (inadvertently) be doing.
          */
-        require(resolveModule(module, { basedir: cwd }));
+        require(require.resolve(module, { paths: [cwd] }));
     }
 });
 

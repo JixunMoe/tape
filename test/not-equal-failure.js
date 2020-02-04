@@ -10,7 +10,7 @@ var stripFullStack = common.stripFullStack;
 tap.test('not equal failure', function (assert) {
     var test = tape.createHarness({ exit: false });
     var stream = test.createStream();
-    var parser = tapParser();
+    var parser = new tapParser();
     assert.plan(3);
 
     stream.pipe(parser);
@@ -48,6 +48,7 @@ tap.test('not equal failure', function (assert) {
     parser.once('assert', function (data) {
         delete data.diag.stack;
         delete data.diag.at;
+        delete data.fullname;
         assert.deepEqual(data, {
             ok: false,
             id: 1,

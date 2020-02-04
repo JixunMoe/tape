@@ -9,11 +9,12 @@ tap.test('preserves stack trace with newlines', function (tt) {
 
     var test = tape.createHarness();
     var stream = test.createStream();
-    var parser = stream.pipe(tapParser());
+    var parser = stream.pipe(new tapParser());
     var stackTrace = 'foo\n  bar';
 
     parser.once('assert', function (data) {
         delete data.diag.at;
+        delete data.fullname;
         tt.deepEqual(data, {
             ok: false,
             id: 1,
@@ -109,10 +110,11 @@ tap.test('preserves stack trace for failed assertions', function (tt) {
 
     var test = tape.createHarness();
     var stream = test.createStream();
-    var parser = stream.pipe(tapParser());
+    var parser = stream.pipe(new tapParser());
 
     var stack = '';
     parser.once('assert', function (data) {
+        delete data.fullname;
         tt.equal(typeof data.diag.at, 'string');
         tt.equal(typeof data.diag.stack, 'string');
         at = data.diag.at || '';
@@ -174,10 +176,11 @@ tap.test('preserves stack trace for failed assertions where actual===falsy', fun
 
     var test = tape.createHarness();
     var stream = test.createStream();
-    var parser = stream.pipe(tapParser());
+    var parser = stream.pipe(new tapParser());
 
     var stack = '';
     parser.once('assert', function (data) {
+        delete data.fullname;
         tt.equal(typeof data.diag.at, 'string');
         tt.equal(typeof data.diag.stack, 'string');
         at = data.diag.at || '';

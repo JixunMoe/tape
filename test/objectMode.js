@@ -1,6 +1,5 @@
 var tap = require('tap');
 var tape = require('../');
-var forEach = require('for-each');
 var through = require('through');
 
 tap.test('object results', function (assert) {
@@ -22,7 +21,7 @@ tap.test('object results', function (assert) {
 
         assert.equal(objects.length, 13);
 
-        forEach(objects, function (obj) {
+        Array.from(objects, function (obj) {
             if (obj.type === 'assert') {
                 asserts++;
             } else if (obj.type === 'test') {

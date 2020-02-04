@@ -1,12 +1,18 @@
 # tape
 
-tap-producing test harness for node and browsers
+tap-producing test harness for node ~~and browsers~~
 
-[![browser support](https://ci.testling.com/substack/tape.png)](http://ci.testling.com/substack/tape)
-
-[![build status](https://secure.travis-ci.org/substack/tape.svg?branch=master)](http://travis-ci.org/substack/tape)
+[No Build Status] [No Coverage Status]
 
 ![tape](https://web.archive.org/web/20170612184731if_/http://substack.net/images/tape_drive.png)
+
+This library is a *fork* of `tape` by [James](http://substack.net). It also includes a copy of [`fast-deep-equal`](https://github.com/epoberezkin/fast-deep-equal) (MIT) by [Evgeny](https://www.threadsstyling.com/).
+
+# install
+
+```sh
+npm install tape@npm:@jixun/tape --save-dev
+```
 
 # example
 
@@ -52,6 +58,7 @@ example:
 
 ```sh
 $ tape tests/**/*.js
+$ tape src/**/*.test.js
 ```
 
 `tape`'s arguments are passed to the
@@ -61,7 +68,7 @@ the arguments as necessary:
 
 ```sh
 $ tape 'tests/**/*.js'
-$ tape "tests/**/*.js"
+$ tape "src/**/*.test.js"
 ```
 
 ## Preloading modules
@@ -388,14 +395,6 @@ $ node object.js test/x.js test/y.js
 {"type":"test","name":"wheee","id":2}
 {"id":0,"ok":true,"name":"(unnamed assert)","operator":"ok","actual":true,"expected":true,"test":2,"type":"assert"}
 {"type":"end","test":2}
-```
-
-# install
-
-With [npm](https://npmjs.org) do:
-
-```sh
-npm install tape --save-dev
 ```
 
 # license

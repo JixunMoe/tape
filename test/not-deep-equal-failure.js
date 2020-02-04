@@ -10,7 +10,7 @@ var stripFullStack = common.stripFullStack;
 tap.test('deep equal failure', function (assert) {
     var test = tape.createHarness({ exit: false });
     var stream = test.createStream();
-    var parser = tapParser();
+    var parser = new tapParser();
     assert.plan(3);
 
     stream.pipe(parser);
@@ -50,6 +50,7 @@ tap.test('deep equal failure', function (assert) {
     parser.once('assert', function (data) {
         delete data.diag.stack;
         delete data.diag.at;
+        delete data.fullname;
         assert.deepEqual(data, {
             ok: false,
             id: 1,
@@ -71,7 +72,7 @@ tap.test('deep equal failure', function (assert) {
 tap.test('not deep equal failure, depth 6, with option', function (assert) {
     var test = tape.createHarness({ exit: false });
     var stream = test.createStream();
-    var parser = tapParser();
+    var parser = new tapParser();
     assert.plan(3);
 
     stream.pipe(parser);
@@ -111,6 +112,7 @@ tap.test('not deep equal failure, depth 6, with option', function (assert) {
     parser.once('assert', function (data) {
         delete data.diag.stack;
         delete data.diag.at;
+        delete data.fullname;
         assert.deepEqual(data, {
             ok: false,
             id: 1,
@@ -132,7 +134,7 @@ tap.test('not deep equal failure, depth 6, with option', function (assert) {
 tap.test('not deep equal failure, depth 6, without option', function (assert) {
     var test = tape.createHarness({ exit: false });
     var stream = test.createStream();
-    var parser = tapParser();
+    var parser = new tapParser();
     assert.plan(3);
 
     stream.pipe(parser);
@@ -172,6 +174,7 @@ tap.test('not deep equal failure, depth 6, without option', function (assert) {
     parser.once('assert', function (data) {
         delete data.diag.stack;
         delete data.diag.at;
+        delete data.fullname;
         assert.deepEqual(data, {
             ok: false,
             id: 1,
