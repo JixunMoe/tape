@@ -1,0 +1,17 @@
+{
+  "name": "@jixun/tape-bin",
+  "version": "1.0.0",
+  "description": "Add tape binary to node_modules if they are missing.",
+  "main": "./tape",
+  "bin": {
+      "tape": "./tape"
+  },
+  "scripts": {
+    "test": "echo \"No test.\" && exit 0"
+  },
+  "author": "Jixun <jixun.moe+npm@gmail.com> (https://jixun.moe/)",
+  "license": "MIT",
+  "peerDependencies": {
+      "tape": "*"
+  }
+}
