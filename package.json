@@ -1,13 +1,15 @@
 {
     "name": "@jixun/tape",
-    "version": "4.13.1-patch2",
+    "version": "4.13.1-patch3",
     "description": "tap-producing test harness for node",
     "author": "Jixun <jixun.moe+npm@gmail.com> (https://jixun.moe/)",
-    "contributors": [{
-        "name": "James Halliday",
-        "email": "mail@substack.net",
-        "url": "http://substack.net"
-    }],
+    "contributors": [
+        {
+            "name": "James Halliday",
+            "email": "mail@substack.net",
+            "url": "http://substack.net"
+        }
+    ],
     "main": "index.js",
     "bin": {
         "tape": "./bin/tape"
@@ -24,7 +26,7 @@
     ],
     "dependencies": {
         "dotignore": "~0.1.2",
-        "glob": "npm:@jixun/glob@^7.1.6-patch7",
+        "glob": "npm:@jixun/glob@^7.1.6-patch8",
         "minimist": "~1.2.0",
         "resumer": "~0.0.0",
         "through": "~2.3.8"
