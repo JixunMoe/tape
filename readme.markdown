@@ -11,8 +11,11 @@ This library is a *fork* of `tape` by [James](http://substack.net). It also incl
 # install
 
 ```sh
-npm install tape@npm:@jixun/tape --save-dev
+npm install --save-dev tape@npm:@jixun/tape @jixun/tape-bin
 ```
+
+Note: npm [could not handle unscoped alias to scoped package](https://github.com/npm/bin-links/issues/16),
+  you'll need `@jixun/tape-bin` to have `tape` in your `$PATH`.
 
 # example
 

@@ -1,6 +1,6 @@
 {
     "name": "@jixun/tape",
-    "version": "4.13.1-patch3",
+    "version": "4.13.1-patch4",
     "description": "tap-producing test harness for node",
     "author": "Jixun <jixun.moe+npm@gmail.com> (https://jixun.moe/)",
     "contributors": [
